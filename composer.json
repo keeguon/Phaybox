@@ -1,0 +1,23 @@
+{
+    "name": "keeguon/oauth2-php"
+  , "type": "library"
+  , "description": "Phaybox is a small library wrote in PHP allowing e-commerce website to interact easily with the Paybox API."
+  , "keywords": ["paybox"]
+  , "homepage": "http://friendspray.com"
+  , "version": "1.0.0"
+  , "license": "MIT"
+  , "authors": [
+        {
+            "name":     "Félix Bellanger"
+          , "email":    "felix.bellanger@gmail.com"
+          , "homepage": "http://felixbellanger.com"
+        }
+    ]
+  , "require": {
+        "php": ">=5.3.2"
+      , "guzzle/guzzle": ">=2.0.0"
+    }
+  , "autoload": {
+        "psr-0": { "FriendSpray\\Phaybox": "src/" }
+    }
+}
