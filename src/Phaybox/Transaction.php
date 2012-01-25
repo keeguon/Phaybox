@@ -100,16 +100,16 @@ class Transaction
   {
     // create base array
     $fields = array(
-        'PBX_ID'      => $this->client->getId()
-      , 'PBX_RANG'    => $this->client->getRang()
-      , 'PBX_SITE'    => $this->client->getSite()
-      , 'PBX_TOTAL'   => $this->params['PBX_TOTAL']
-      , 'PBX_DEVISE'  => $this->params['PBX_DEVISE']
-      , 'PBX_CMD'     => $this->params['PBX_CMD']
-      , 'PBX_PORTEUR' => $this->params['PBX_PORTEUR']
-      , 'PBX_RETOUR'  => $this->client->options['callback']
-      , 'PBX_HASH'    => $this->client->options['algorithm']
-      , 'PBX_TIME'    => date(DATE_W3C)
+        'PBX_IDENTIFIANT' => $this->client->getId()
+      , 'PBX_RANG'        => $this->client->getRang()
+      , 'PBX_SITE'        => $this->client->getSite()
+      , 'PBX_TOTAL'       => $this->params['PBX_TOTAL']
+      , 'PBX_DEVISE'      => $this->params['PBX_DEVISE']
+      , 'PBX_CMD'         => $this->params['PBX_CMD']
+      , 'PBX_PORTEUR'     => $this->params['PBX_PORTEUR']
+      , 'PBX_RETOUR'      => $this->client->options['callback']
+      , 'PBX_HASH'        => $this->client->options['algorithm']
+      , 'PBX_TIME'        => date(DATE_W3C)
     );
 
     // generate signature from base array

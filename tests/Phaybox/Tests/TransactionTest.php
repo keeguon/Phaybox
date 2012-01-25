@@ -140,7 +140,7 @@ class TransactionTest extends \Phaybox\Tests\TestCase
     $formattedParams = $this->transaction->getFormattedParams();
 
     // PBX_ID, PBX_RANG, PBX_SITE, PBX_HASH, PBX_RETOUR should match client encapsuled data
-    $this->assertEquals($this->client->getId(), $formattedParams['PBX_ID']);
+    $this->assertEquals($this->client->getId(), $formattedParams['PBX_IDENTIFIANT']);
     $this->assertEquals($this->client->getRang(), $formattedParams['PBX_RANG']);
     $this->assertEquals($this->client->getSite(), $formattedParams['PBX_SITE']);
     $this->assertEquals($this->client->options['algorithm'], $formattedParams['PBX_HASH']);
