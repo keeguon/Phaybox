@@ -6,7 +6,6 @@ Phaybox is a small library wrote in PHP allowing e-commerce website to interact 
 ## Requirements
 
 * PHP 5.3.x
-* Guzzle 2.0.x
 
 
 ## Installation
