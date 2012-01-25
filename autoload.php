@@ -9,7 +9,6 @@ use Symfony\Component\ClassLoader\UniversalClassLoader;
 $loader = new UniversalClassLoader;
 $loader->registerNamespaces(array(
     'Symfony'             => __DIR__.'/vendor'
-  , 'Guzzle'              => __DIR__.'/vendor/guzzle/src'
   , 'FriendSpray\\Paybox' => __DIR__.'/src'
 ));
 $loader->register();
