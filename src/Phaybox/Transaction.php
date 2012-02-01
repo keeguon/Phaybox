@@ -110,7 +110,7 @@ class Transaction
       , 'PBX_PORTEUR'     => $this->params['PBX_PORTEUR']
       , 'PBX_RETOUR'      => $this->client->options['callback']
       , 'PBX_HASH'        => strtoupper($this->client->options['algorithm'])
-      , 'PBX_TIME'        => date('Y-m-d', time())
+      , 'PBX_TIME'        => date(DATE_W3C)
     );
 
     // generate signature from base array
