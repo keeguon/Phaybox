@@ -143,7 +143,7 @@ class TransactionTest extends \Phaybox\Tests\TestCase
     $this->assertEquals($this->client->getId(), $formattedParams['PBX_IDENTIFIANT']);
     $this->assertEquals($this->client->getRang(), $formattedParams['PBX_RANG']);
     $this->assertEquals($this->client->getSite(), $formattedParams['PBX_SITE']);
-    $this->assertEquals($this->client->options['algorithm'], $formattedParams['PBX_HASH']);
+    $this->assertEquals(strtoupper($this->client->options['algorithm']), $formattedParams['PBX_HASH']);
     $this->assertEquals($this->client->options['callback'], $formattedParams['PBX_RETOUR']);
 
     // PBX_TOTAL, PBX_DEVISE, PBX_CMD, PBX_PORTEUR should match transaction params

@@ -86,7 +86,8 @@ class Transaction
   */
   public function generateSignature($params = '')
   {
-    return hash_hmac($this->client->options['algorithm'], $params, $this->client->getSecret());
+    $params = urldecode($params);
+    return hash_hmac($this->client->options['algorithm'], $params, $this->client->getSecret(true));
   }
 
  /**
@@ -100,20 +101,20 @@ class Transaction
   {
     // create base array
     $fields = array(
-        'PBX_IDENTIFIANT' => $this->client->getId()
+        'PBX_SITE'        => $this->client->getSite()
       , 'PBX_RANG'        => $this->client->getRang()
-      , 'PBX_SITE'        => $this->client->getSite()
+      , 'PBX_IDENTIFIANT' => $this->client->getId()
       , 'PBX_TOTAL'       => $this->params['PBX_TOTAL']
       , 'PBX_DEVISE'      => $this->params['PBX_DEVISE']
       , 'PBX_CMD'         => $this->params['PBX_CMD']
       , 'PBX_PORTEUR'     => $this->params['PBX_PORTEUR']
       , 'PBX_RETOUR'      => $this->client->options['callback']
-      , 'PBX_HASH'        => $this->client->options['algorithm']
-      , 'PBX_TIME'        => date(DATE_W3C)
+      , 'PBX_HASH'        => strtoupper($this->client->options['algorithm'])
+      , 'PBX_TIME'        => date('Y-m-d', time())
     );
 
     // generate signature from base array
-    $fields['PBX_HMAC'] = $this->generateSignature(http_build_query($fields));
+    $fields['PBX_HMAC'] = strtoupper($this->generateSignature(http_build_query($fields)));
 
     return array_merge($fields, $this->params);
   }

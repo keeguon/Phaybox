@@ -75,11 +75,14 @@ class Client
  /**
   * Get secret property
   *
+  * @param boolean $binary Wether to return the secret in binary or not
+  *
   * @return mixed
   */
-  public function getSecret()
+  public function getSecret($binary = false)
   {
-    return $this->secret ?: null;
+    $secret = $binary ? pack('H*', $this->secret) : $this->secret;
+    return $secret ?: null;
   }
 
  /**
