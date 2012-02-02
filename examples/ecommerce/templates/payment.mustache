@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>Phaybox ecommerce example</title>
+</head>
+
+<body>
+  
+  <form method="post" action="https://preprod-tpeweb.paybox.com/cgi/MYchoix_pagepaiement.cgi">
+    <input type="hidden" name="PBX_SITE" value="{{site}}">
+    <input type="hidden" name="PBX_RANG" value="{{rang}}">
+    <input type="hidden" name="PBX_IDENTIFIANT" value="{{identifiant}}">
+    <input type="hidden" name="PBX_TOTAL" value="{{total}}">
+    <input type="hidden" name="PBX_DEVISE" value="{{devise}}">
+    <input type="hidden" name="PBX_CMD" value="{{cmd}}">
+    <input type="hidden" name="PBX_PORTEUR" value="{{porteur}}">
+    <input type="hidden" name="PBX_RETOUR" value="{{retour}}">
+    <input type="hidden" name="PBX_HASH" value="{{algorithm}}">
+    <input type="hidden" name="PBX_TIME" value="{{timestamp}}">
+    {{#optionals}}
+      <input type="hidden" name="{{name}}" value="{{value}}">
+    {{/optionals}}
+    <input type="hidden" name="PBX_HMAC" value="{{signature}}">
+    <input type="submit" value="Payer">
+  </form>
+
+</body>
+</head>

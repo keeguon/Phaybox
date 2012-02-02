@@ -1,3 +1,9 @@
 [submodule "vendor/Symfony/Component/ClassLoader"]
 	path = vendor/Symfony/Component/ClassLoader
 	url = git://github.com/symfony/ClassLoader.git
+[submodule "examples/ecommerce/vendor/mustache.php"]
+	path = examples/ecommerce/vendor/mustache.php
+	url = https://github.com/bobthecow/mustache.php.git
+[submodule "examples/ecommerce/vendor/Symfony/Component/Yaml"]
+	path = examples/ecommerce/vendor/Symfony/Component/Yaml
+	url = https://github.com/symfony/Yaml.git

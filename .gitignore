@@ -2,3 +2,4 @@
 *.sw[a-z]
 composer.phar
 phpunit.xml
+examples/ecommerce/config/phaybox.yml

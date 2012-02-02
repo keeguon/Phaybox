@@ -99,24 +99,33 @@ class Transaction
   */
   public function getFormattedParams()
   {
+    // copy params var
+    $params = $this->params;
+
     // create base array
     $fields = array(
         'PBX_SITE'        => $this->client->getSite()
       , 'PBX_RANG'        => $this->client->getRang()
       , 'PBX_IDENTIFIANT' => $this->client->getId()
-      , 'PBX_TOTAL'       => $this->params['PBX_TOTAL']
-      , 'PBX_DEVISE'      => $this->params['PBX_DEVISE']
-      , 'PBX_CMD'         => $this->params['PBX_CMD']
-      , 'PBX_PORTEUR'     => $this->params['PBX_PORTEUR']
+      , 'PBX_TOTAL'       => $params['PBX_TOTAL']
+      , 'PBX_DEVISE'      => $params['PBX_DEVISE']
+      , 'PBX_CMD'         => $params['PBX_CMD']
+      , 'PBX_PORTEUR'     => $params['PBX_PORTEUR']
       , 'PBX_RETOUR'      => $this->client->options['callback']
       , 'PBX_HASH'        => strtoupper($this->client->options['algorithm'])
       , 'PBX_TIME'        => date(DATE_W3C)
     );
 
+    // Unset setted params
+    unset($params['PBX_TOTAL'], $params['PBX_DEVISE'], $params['PBX_CMD'], $params['PBX_PORTEUR']);
+
+    // Merge remaining params
+    $fields = array_merge($fields, $params);
+
     // generate signature from base array
     $fields['PBX_HMAC'] = strtoupper($this->generateSignature(http_build_query($fields)));
 
-    return array_merge($fields, $this->params);
+    return $fields;
   }
 
  /**
