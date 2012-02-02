@@ -70,10 +70,8 @@ class PaymentView extends Mustache
 
     unset($vars['PBX_SITE'], $vars['PBX_RANG'], $vars['PBX_IDENTIFIANT'], $vars['PBX_TOTAL'], $vars['PBX_DEVISE'], $vars['PBX_CMD'], $vars['PBX_PORTEUR'], $vars['PBX_RETOUR'], $vars['PBX_HASH'], $vars['PBX_TIME'], $vars['PBX_HMAC']);
 
-    foreach ($vars as $optional) {
-      if (isset($vars[$optional])) {
-        $optionals[] = array('name' => $optional, 'value' => urlencode($vars[$optional]));
-      }
+    foreach ($vars as $name => $value) {
+      $optionals[] = array('name' => $name, 'value' => urlencode($value));
     }
 
     return $optionals;
