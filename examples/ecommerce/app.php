@@ -11,7 +11,7 @@ use Symfony\Component\ClassLoader\UniversalClassLoader;
 
 $loader = new UniversalClassLoader;
 $loader->registerNamespaces(array(
-    'Symfony' => array(__DIR__.'/../../vendor', __DIR__.'/vendor')
+    'Symfony' => array(__DIR__.'/../../vendor', __DIR__.'/vendor', __DIR__.'/vendor/Silex/vendor')
   , 'Silex'   => __DIR__.'/vendor/Silex/src'
   , 'Phaybox' => __DIR__.'/../../src'
 ));
