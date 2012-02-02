@@ -7,3 +7,6 @@
 [submodule "examples/ecommerce/vendor/Symfony/Component/Yaml"]
 	path = examples/ecommerce/vendor/Symfony/Component/Yaml
 	url = https://github.com/symfony/Yaml.git
+[submodule "examples/ecommerce/vendor/Silex"]
+	path = examples/ecommerce/vendor/Silex
+	url = https://github.com/fabpot/Silex.git

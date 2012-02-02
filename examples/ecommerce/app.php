@@ -12,15 +12,10 @@ use Symfony\Component\ClassLoader\UniversalClassLoader;
 $loader = new UniversalClassLoader;
 $loader->registerNamespaces(array(
     'Symfony' => array(__DIR__.'/../../vendor', __DIR__.'/vendor')
+  , 'Silex'   => __DIR__.'/vendor/Silex/src'
   , 'Phaybox' => __DIR__.'/../../src'
 ));
 $loader->register();
-
-
-// Load silex
-// ----------
-
-require_once __DIR__.'/silex.phar';
 
 
 // Use libs
