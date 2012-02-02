@@ -3,7 +3,7 @@
   , "type": "library"
   , "description": "Phaybox is a small library wrote in PHP allowing e-commerce website to interact easily with the Paybox API."
   , "keywords": ["paybox"]
-  , "homepage": "http://felixbellanger.com"
+  , "homepage": "https://github.com/Keeguon/Phaybox"
   , "version": "1.0.0"
   , "license": "MIT"
   , "authors": [
