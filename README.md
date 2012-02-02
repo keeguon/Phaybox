@@ -38,7 +38,7 @@ And an handy autoload file to include in you project in vendor/.composer/autoloa
 To install Phaybox using git you just have to run the following command:
 
 ```bash
-$ git clone https://github.com/Keeguon/Phaybox --recursive
+$ git clone https://github.com/Keeguon/Phaybox.git --recursive
 ```
 
 
