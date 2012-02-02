@@ -80,8 +80,3 @@ For more in-depth informations there's an exhaustive example in the the examples
 ## ToDo
 
 * Add a response class to handle Paybox callbacks (especially errors)
-
-
-## Code style
-
-Phaybox follows the [Symfony2 Coding Standard](https://github.com/opensky/Symfony2-coding-standard) for the most part (we use two spaces for indentation instead of four).
