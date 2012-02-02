@@ -84,6 +84,15 @@ $app->get('/payment', function(Request $request) use ($app, $payboxClient) {
 });
 
 $app->get('/payment/callback', function(Request $request) use ($app) {
+  $payboxError = null;
+
+  // Handle error
+  $errorCode = $request->query->get('Err');
+  if ($errorCode !== '00000') {
+    $payboxError = new Phaybox\Error($errorCode);
+  }
+
+  return $payboxError ? new Response($payboxError->getMessage(), 400) : new Response('Payment succeeded', 200);
 });
 
 

@@ -83,8 +83,3 @@ Using the snippets above should provide you the fields you need in your form (yo
 Optional fields will be located at the end but before the HMAC signature and they should be in the same order as you entered them in your form (see 4.3 in Paybox documentation).
 
 For more in-depth informations there's an exhaustive example in the the examples folder.
-
-
-## ToDo
-
-* Add a response class to handle Paybox callbacks (especially errors)
