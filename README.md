@@ -17,7 +17,7 @@ To install Phaybox with composer you simply need to create a composer.json in yo
 ```json
 {
     "require": {
-        "friendspray/phaybox"
+        "keeguon/phaybox"
     }
 }
 ```
