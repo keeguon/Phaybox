@@ -16,7 +16,7 @@ $loader->registerNamespaces(array(
   , 'Phaybox' => __DIR__.'/../../src'
 ));
 $loader->registerPrefixes(array(
-    'Pimple' => __DIR__.'/vendor/pimple/lib'
+    'Pimple' => __DIR__.'/vendor/Silex/vendor/pimple/lib'
 ));
 $loader->register();
 
