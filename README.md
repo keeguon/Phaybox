@@ -10,7 +10,7 @@ Phaybox is a small library wrote in PHP allowing e-commerce website to interact 
 
 ## Installation
 
-### composer
+### Using composer
 
 To install Phaybox with composer you simply need to create a composer.json in your project root and add:
 
@@ -25,13 +25,21 @@ To install Phaybox with composer you simply need to create a composer.json in yo
 Then run
 
 ```bash
-$ wget -nc http://getcomposer.org/composer.phar
-$ php composer.phar install
+$ wget --quiet http://getcomposer.org/composer.phar
+$ php composer.phar install --install-suggest
 ```
 
 You have now Phaybox installed in vendor/friendspray/phaybox
 
 And an handy autoload file to include in you project in vendor/.composer/autoload.php
+
+### Using git
+
+To install Phaybox using git you just have to run the following command:
+
+```bash
+$ git clone https://github.com/Keeguon/Phaybox --recursive
+```
 
 
 ## Testing
