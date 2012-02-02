@@ -64,9 +64,9 @@ $app->get('/payment', function(Request $request) use ($app, $payboxClient) {
     , 'PBX_DEVISE'   => 978                                    // See ISO 4217
     , 'PBX_CMD'      => 'My order'                             // Somewhat unique label for the order
     , 'PBX_PORTEUR'  => 'me@mail.com'                          // The email of the user who's making the transaction
-    , 'PBX_EFFECTUE' => 'http://paybox.local/payment/callback' // Success callback URI (optional)
-    , 'PBX_REFUSE'   => 'http://paybox.local/payment/callback' // Error callback URI (optional)
-    , 'PBX_ANNULE'   => 'http://paybox.local/payment/callback' // Cancel callback URI (optional)
+    , 'PBX_EFFECTUE' => 'http://phaybox.local/payment/callback' // Success callback URI (optional)
+    , 'PBX_REFUSE'   => 'http://phaybox.local/payment/callback' // Error callback URI (optional)
+    , 'PBX_ANNULE'   => 'http://phaybox.local/payment/callback' // Cancel callback URI (optional)
   ));
 
   // Get form fields
