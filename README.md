@@ -14,7 +14,7 @@ Phaybox is a small library wrote in PHP allowing e-commerce website to interact 
 
 To install Phaybox with composer you simply need to create a composer.json in your project root and add:
 
-```json
+```
 {
     "require": {
         "keeguon/phaybox"
@@ -24,7 +24,7 @@ To install Phaybox with composer you simply need to create a composer.json in yo
 
 Then run
 
-```bash
+```
 $ wget --quiet http://getcomposer.org/composer.phar
 $ php composer.phar install --install-suggest
 ```
@@ -37,7 +37,7 @@ And an handy autoload file to include in you project in vendor/.composer/autoloa
 
 To install Phaybox using git you just have to run the following command:
 
-```bash
+```
 $ git clone https://github.com/Keeguon/Phaybox.git --recursive
 ```
 
@@ -48,7 +48,7 @@ The library is fully tested with PHPUnit for unit tests. To run tests you need P
 
 Go to the base library folder and run the test suites
 
-```bash
+```
 $ phpunit
 ```
 
@@ -60,13 +60,16 @@ $ phpunit
 
 ## How to use
 
-```php
+```
 <?php
 
 use Phaybox\Client;
 $client = new Client('your_client_id', 'your_client_secret', 'your_client_rang', 'your_client_site', array(
-    'algorithm' => '' // see hash_algos()
-  , 'callback'  => '' // see PBX_RETOUR in the Paybox documentation
+    'algorithm'     => '' // Optional, see hash_algos(), defaults to 'sha512'
+  , 'callback'      => '' // Optional, see PBX_RETOUR in the Paybox documentation, defaults to 'Amt:M;Ref:R;Auth:A;Err:E'
+  , 'path_prefix'   => '' // Optional, the path which prefix the different phases for HTTP transactions, defaults to 'paybox'
+  , 'request_path'  => '' // Optional, the path pointing to the request phase
+  , 'callback_path' => '' // Optional, the path pointing to the callback phase
 ));
 $transaction = $client->getTransaction(array(
     'PBX_TOTAL'   => 0000          // required
