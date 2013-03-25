@@ -1,0 +1,8 @@
+{
+    "require": {
+        "keeguon/phaybox":   "1.2.*"
+      , "mustache/mustache": "2.1.*"
+      , "silex/silex":       "1.0.*@dev"
+      , "symfony/yaml":      "2.2.*@dev"
+    }
+}

@@ -3,24 +3,7 @@
 // Autoload
 // --------
 
-if (false === class_exists('Symfony\Component\ClassLoader\UniversalClassLoader', false)) {
-  require_once __DIR__.'/../../vendor/Symfony/Component/ClassLoader/UniversalClassLoader.php';
-}
-
-use Symfony\Component\ClassLoader\UniversalClassLoader;
-
-$loader = new UniversalClassLoader;
-$loader->registerNamespaces(array(
-    'Symfony' => array(__DIR__.'/../../vendor', __DIR__.'/vendor')
-  , 'Phaybox' => __DIR__.'/../../src'
-));
-$loader->register();
-
-
-// Load PHARs
-// ----------
-
-require_once __DIR__.'/silex.phar';
+$loader = require_once __DIR__ . "/../vendor/autoload.php";
 
 
 // Use libs

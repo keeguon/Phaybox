@@ -138,7 +138,7 @@ class Transaction
   protected function validateCurrency($currency_code = '')
   {
     // load currencies from a remote address and store all truthy currency codes in an array
-    $xml        = new \SimpleXMLElement('http://www.currency-iso.org/dl_iso_table_a1.xml', 0, true);
+    $xml        = new \SimpleXMLElement('http://www.currency-iso.org/dam/downloads/dl_iso_table_a1.xml', 0, true);
     $result     = $xml->xpath('ISO_CURRENCY');
     $currencies = array();
     foreach ($result as $currency) {
