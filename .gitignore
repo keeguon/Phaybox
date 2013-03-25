@@ -1,5 +1,18 @@
+# Mac files
 .DS_Store
 *.sw[a-z]
-composer.phar
+
+# Ignore potentially sensitive phpunit file
 phpunit.xml
-examples/ecommerce/config/phaybox.yml
+
+# Ignore composer generated files
+composer.phar
+composer.lock
+composer-test.lock
+vendor/
+
+# Ignore composer for examples
+examples/ecommerce/composer.phar
+examples/ecommerce/composer.lock
+examples/ecommerce/composer-test.lock
+examples/ecommerce/vendor/
