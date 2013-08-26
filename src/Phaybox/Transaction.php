@@ -138,12 +138,11 @@ class Transaction
   protected function validateCurrency($currency_code = '')
   {
     // load currencies from a remote address and store all truthy currency codes in an array
-    $xml        = new \SimpleXMLElement('http://www.currency-iso.org/dam/downloads/dl_iso_table_a1.xml', 0, true);
-    $result     = $xml->xpath('ISO_CURRENCY');
-    $currencies = array();
+    $xml        = new \SimpleXMLElement(dirname(__FILE__) . "/../../data/table_a1.xml", 0, true);
+    $result     = $xml->xpath('//CcyNtry');
     foreach ($result as $currency) {
-      if (empty($currency->NUMERIC_CODE) || $currency->NUMERIC_CODE === 'Nil') continue;
-      $currencies[] = $currency->NUMERIC_CODE;
+      if (empty($currency->CcyNbr) || $currency->CcyNbr === 'Nil') continue;
+      $currencies[] = $currency->CcyNbr;
     }
 
     return in_array($currency_code, $currencies);
